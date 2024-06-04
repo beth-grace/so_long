@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/03 19:41:32 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/04 19:27:31 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,16 @@
 # include <stdlib.h>
 # include <mlx.h>
 # include <string.h>
+
+# ifdef LINUX
+// LINUX KEYCODES
+#  define ESCAPE		0xff1b
+
+# else
+// MACOS KEYCODES
+#  define ESCAPE		0x35
+
+#endif
 
 typedef struct s_so_long
 {
