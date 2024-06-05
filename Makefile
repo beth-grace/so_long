@@ -1,7 +1,8 @@
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -Iminilibx -Ilibft
 NAME = so_long
-SRC = new_window.c
+SRC = new_window.c\
+	  image.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 LFLAGS =
