@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:23:52 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/04 19:27:59 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/05 19:30:22 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int	keykey(int key_code, t_so_long *oolong)
 	if (key_code == ESCAPE)
 	{
 		mlx_destroy_window(oolong->mlx, oolong->windoe);
+		mlx_destroy_image(oolong->mlx, oolong->image);
 		exit(0);
 	}
 	return (0);

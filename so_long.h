@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/04 19:27:31 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/05 19:35:21 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,18 @@
 
 #endif
 
+typedef struct s_sprite
+{
+	void	*image;
+	int		width;
+	int		height;
+}
+
 typedef struct s_so_long
 {
 	void	*mlx;
 	void	*windoe;
+	void	*image;
 }	t_so_long;
 
 #endif

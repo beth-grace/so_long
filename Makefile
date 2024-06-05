@@ -30,7 +30,7 @@ libft:
 	@echo "Made libft"
 
 mlx:
-	@$(MAKE) -C minilibx
+	@$(MAKE) -C $(FMLX)
 	@echo "Made mlx"
 
 %.o: %.c

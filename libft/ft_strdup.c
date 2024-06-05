@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.org.au>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 12:17:15 by bmilford          #+#    #+#             */
-/*   Updated: 2024/03/13 15:35:14 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/05 17:57:40 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 char	*ft_strdup(const char *s1)
 {
 	int		index;
-	int		size;
 	char	*dest;
 
-	size = 0;
 	index = 0;
 	while (s1[index] != '\0')
 		index++;
