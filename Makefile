@@ -1,8 +1,8 @@
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -Iminilibx -Ilibft
+CFLAGS = -Wall -Werror -Wextra $(DEBUG_FLAGS) -Iminilibx -Ilibft
+DEBUG_FLAGS =
 NAME = so_long
 SRC = new_window.c\
-	  image.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 LFLAGS =
@@ -21,6 +21,11 @@ endif
 
 
 all: $(NAME)
+
+debug: fclean debug_cflags $(NAME)
+
+debug_cflags:
+	@$(eval DEBUG_FLAGS = -g)
 
 $(NAME): libft mlx $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $@ -L$(FMLX) -Llibft -lmlx -lft $(LFLAGS)
@@ -43,7 +48,7 @@ clean:
 	make -C minilibx clean
 
 fclean: clean
-	rm -f $(SERVER) $(CLIENT)
+	rm -f $(NAME)
 
 re: fclean all
 
