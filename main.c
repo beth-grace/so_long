@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_window.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:23:52 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/06 17:40:15 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/10 02:09:57 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	keykey(int key_code, t_so_long *oolong)
 	return (0);
 }
 
+void	gg(t_so_long *counter, t_so_long *oolong)
+//if all colewctables are achieved and on the exit tile, then printf gg ig
 int main(void)
 {
 	t_so_long	oolong;
