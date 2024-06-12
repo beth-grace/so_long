@@ -4,6 +4,7 @@ DEBUG_FLAGS =
 NAME = so_long
 SRC = main.c\
 	  put_images.c\
+	  map_tingz.c\
 
 #	  key_commands.c\
 #	  events.c\

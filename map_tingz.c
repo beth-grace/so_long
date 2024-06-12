@@ -6,22 +6,25 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:54:56 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/12 16:18:52 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/12 18:54:30 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	map_size(t_so_long *game, int fd)
+void	map_size(t_so_long *game, char *file)
 {
 	char	*line;
 	int		index;
+	int		fd;
 
 	index = 0;
-	fd = open("argc, second arguement",O_RDONLY);
-	while(1)
+	game->height = 0;
+	game->width = 0;
+	fd = open(file,O_RDONLY);
+	line = get_next_line(fd);
+	while(line)
 	{
-		line = get_next_line(fd);
 		game->width = ft_strlen(line);
 		game->height++;
 		while (line[index])
@@ -29,24 +32,25 @@ void	map_size(t_so_long *game, int fd)
 			if (line[index] == 'C')
 				game->counter++;
 			index++;
-		}				
-		free(line)
+		}
+		free(line);
+		line = get_next_line(fd);
 	}
-	close(fd)
+	close(fd);
+}
 
-void	read_map(t_so_long *game, int fd, char **map)
+void	read_map(t_so_long *game, char *file)
 {
-	int	index;
+	int		index;
+	int		fd;
 
 	index = 0;
-	fd = open("idk",O_RDONLY);
-	while(index <= game->height)
+	fd = open(file,O_RDONLY);
+	game->map = (char **)malloc((game->height + 1) * sizeof(char *));
+	while (index < game->height)
 	{
-		*map[index] = get_next_line(fd)
+		game->map[index] = get_next_line(fd);
 		index++;
-		free(map)
 	}
-	close(fd)
-
-
-
+	close(fd);
+}

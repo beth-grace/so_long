@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/12 16:18:58 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/12 18:48:02 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <mlx.h>
 # include <string.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include "libft.h"
 
 # ifdef LINUX
 // LINUX KEYCODES
@@ -37,9 +40,9 @@
 
 typedef struct s_so_long
 {
-	int			*counter;
-	int			*height;
-	int			*width;
+	int			counter;
+	int			height;
+	int			width;
 	char		**map;
 	void		*mlx;
 	void		*win;
@@ -52,8 +55,8 @@ typedef struct s_so_long
 
 void	put_images(t_so_long *game);
 void	map_gen(t_so_long *game);
-void	map_size(t_so_long *game,int fd);
-void	read_map(t_so_long *game, int fd, char **map);
+void	map_size(t_so_long *game,char *file);
+void	read_map(t_so_long *game, char *file);
 
 
 #endif
