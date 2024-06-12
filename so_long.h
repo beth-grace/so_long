@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/11 18:15:52 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/12 16:18:58 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,12 @@
 
 #endif
 
-typedef struct s_sprite
-{
-	void	*image;
-	int		width;
-	int		height;
-}	t_sprite;
-
 typedef struct s_so_long
 {
 	int			*counter;
-	void		*map;
+	int			*height;
+	int			*width;
+	char		**map;
 	void		*mlx;
 	void		*win;
 	void		*walls;
@@ -53,10 +48,12 @@ typedef struct s_so_long
 	void		*player;
 	void		*floor;
 	void		*exit;
-	t_sprite	image;
 }	t_so_long;
 
 void	put_images(t_so_long *game);
 void	map_gen(t_so_long *game);
+void	map_size(t_so_long *game,int fd);
+void	read_map(t_so_long *game, int fd, char **map);
+
 
 #endif
