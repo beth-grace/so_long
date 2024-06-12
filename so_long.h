@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/10 02:11:17 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/11 18:15:52 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,18 @@
 # ifdef LINUX
 // LINUX KEYCODES
 #  define ESCAPE		0xff1b
-#  define Key_W			0x12
-#  define Key_S>>   >   0x20
-#  define Key_A>>   >   0x1f
-#  define Key_D>>   >   0x21
+#  define KEY_W			0x12
+#  define KEY_S			0x20
+#  define KEY_A			0x1f
+#  define KEY_D			0x21
 
 # else
 // MACOS KEYCODES
 #  define ESCAPE		0x35
-#  define Key_W>>   >   0x0D
-#  define Key_S>>   >   0x01
-#  define Key_A>>   >   0x00
-#  define Key_D>>   >   0x02
+#  define KEY_W			0x0D
+#  define KEY_S			0x01
+#  define KEY_A			0x00
+#  define KEY_D			0x02
 
 #endif
 
@@ -55,5 +55,8 @@ typedef struct s_so_long
 	void		*exit;
 	t_sprite	image;
 }	t_so_long;
+
+void	put_images(t_so_long *game);
+void	map_gen(t_so_long *game);
 
 #endif

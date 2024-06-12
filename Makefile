@@ -3,11 +3,11 @@ CFLAGS = -Wall -Werror -Wextra $(DEBUG_FLAGS) -Iminilibx -Ilibft
 DEBUG_FLAGS =
 NAME = so_long
 SRC = main.c\
-key_commands.c\
-map.ber\
-events.c\
-errors.c\
-put_images.c\
+	  put_images.c\
+
+#	  key_commands.c\
+#	  events.c\
+#	  errors.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
 LFLAGS =

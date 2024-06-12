@@ -1,2 +1,5 @@
 so_long
 minilibx-linux
+*.o
+*.a
+

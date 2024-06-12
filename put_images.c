@@ -6,43 +6,38 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 00:41:28 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/10 02:08:44 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/11 18:20:39 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	put_images(t_so_long *oolong)
+void	put_images(t_so_long *game)
 {
 	int	height;
 	int	width;
 
-	oolong->wall = mlx_xpm_file_to_image(oolong.mlx,"assets/??",
+	game->walls = mlx_xpm_file_to_image(game->mlx,"assets1/grass.xpm",
 		&height, &width);
-	oolong->collectable =mlx_xpm_file_to_image(oolong.mlx,"assets/??",
+	game->collectables =mlx_xpm_file_to_image(game->mlx,"assets1/grass.xpm",
 		&height, &width);
-	oolong->player = mlx_xpm_file_to_image(oolong.mlx,"assets/??",
+	game->player = mlx_xpm_file_to_image(game->mlx,"assets1/grass.xpm",
 		&height, &width);
-	oolong->exit = mlx_xpm_file_to_image(oolong.mlx,"assets/??",
+	game->exit = mlx_xpm_file_to_image(game->mlx,"assets1/grass.xpm",
 		&height, &width);
-	oolong->floor = mlx_xpm_file_to_image(oolong.mlx,"assets/??",
+	game->floor = mlx_xpm_file_to_image(game->mlx,"assets1/grass.xpm",
 		&height, &width);
 }
 
-void	map_gen(t_so_long *oolong)
+void	map_gen(t_so_long *game)
 {
-	if (map == '0')
-		mlx_put_image_to_window(oolong->mlx,oolong->win,oolong->floor,??,??);
-	else if (map == '1')
-		mlx_put_image_to_window(oolong->mlx,oolong->win,oolong->wall,??,??);
-	else if (map == 'C')
-		mlx_put_image_to_window(oolong->mlx,oolong->win,oolong->collectable,
-			??,??);
-	else if (map == 'E')
-		mlx_put_image_to_window(oolong->mlx,oolong->win,oolong->exit,??,??);
-	else if (map == 'P')
-		mlx_put_image_to_window(oolong->mlx,oolong->win,oolong->player,??,??);
+	mlx_put_image_to_window(game->mlx,game->win,game->floor,0,0);
+	mlx_put_image_to_window(game->mlx,game->win,game->walls,64,0);
+	mlx_put_image_to_window(game->mlx,game->win,game->collectables,
+		0,64);
+	mlx_put_image_to_window(game->mlx,game->win,game->exit,64,64);
+	mlx_put_image_to_window(game->mlx,game->win,game->player,64,128);
 }
 
-void	read_map(t_so_long *map)
+void	read_map(t_so_long *map);
 //read map for the collectable counter

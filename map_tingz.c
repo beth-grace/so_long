@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_commands.c                                     :+:      :+:    :+:   */
+/*   map_tingz.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 01:24:44 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/11 18:14:59 by beefie           ###   ########.fr       */
+/*   Created: 2024/06/12 10:54:56 by beefie            #+#    #+#             */
+/*   Updated: 2024/06/12 12:43:00 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	keykey(int key_code, t_so_long *oolong)
+void	read_map(t_so_long *game, t_so_long *map)
 {
-	if (key_code == KEY_W)
-	if (key_code == KEY_A)
-	if (key_code == KEY_S)
-	if (key_code == KEY_D)
-}
+	t_so_long	*height;
+	t_so_long	*width;
+	t_so_long	*counter;
+	int			index;
+	
 
-void	player_position(t_so_long *oolong, t_so_long *map)
-//i think player position is a double array ill pull from the map, use gnl to read map??\
-//if trying to go through wall print "wall" and dont move
-// if place on map is 1
+	index = 0;
+	while(1)
+	{
+		width = 0;
+		while(idk)
+		{
+			open(
+			*get_next_line(
+
+
 
