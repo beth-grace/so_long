@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 18:23:52 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/13 18:57:02 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/13 20:58:48 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
 	game.width = 0;
 	game.height = 0;
 	game.counter = 0;
+	game.moves = 0;
 	map_size(&game, argv[1]);
 	read_map(&game, argv[1]);
 	put_images(&game);

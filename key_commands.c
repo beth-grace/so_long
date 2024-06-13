@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 01:24:44 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/13 18:19:19 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/13 20:50:03 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	keycheck(int key_code, t_so_long *game)
 		printf("%x\n", key_code);
 		return (0);
 	}
+	game->moves++;
 	if (game->map[pot_y][pot_x] == '1')
 		printf("WALL DUMB DUMB\n");
 	else

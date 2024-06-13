@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:54:56 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/13 18:56:56 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/13 20:18:44 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	map_size(t_so_long *game, char *file)
 	int		index;
 	int		fd;
 
-	index = 0;
 	fd = open(file,O_RDONLY);
 	line = get_next_line(fd);
 	while(line)
@@ -31,24 +30,25 @@ void	map_size(t_so_long *game, char *file)
 			exit();
 		}
 		game->height++;
-		index = 0;
-		while (line[index])
-		{
-			if (line[index] == 'C')
-				game->counter++;
-			index++;
-		}
+		char_check(game, line);
 		free(line);
 		line = get_next_line(fd);
 	}
 	close(fd);
 }
+
 void	char_check(t_so_long *game, char *line)
 {
 	int	index;
 
 	index = 0;
-	while (line
+	while (line[index])
+	{
+		if (line[index] == 'C')
+			game->counter++;
+		index++;
+	}
+}
 void	read_map(t_so_long *game, char *file)
 {
 	int		index;
