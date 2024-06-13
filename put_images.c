@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 00:41:28 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/13 01:03:52 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/13 17:38:18 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,24 @@ void	map_gen(t_so_long *game)
 		{
 			if (game->map[h][w] == '0')
 				mlx_put_image_to_window(game->mlx,game->win,game->floor,
-					h * 64,w * 64);
+					w * 64,h * 64);
 			else if (game->map[h][w] == '1')
 				mlx_put_image_to_window(game->mlx,game->win,game->walls,
-					h * 64,w * 64);
+					w * 64,h * 64);
 			else if (game->map[h][w] == 'C')
 				mlx_put_image_to_window(game->mlx,game->win,
-					game->collectables,h * 64,w * 64);
+					game->collectables, w * 64, h * 64);
 			else if (game->map[h][w] == 'E')
 				mlx_put_image_to_window(game->mlx,game->win,game->exit
-					,h * 64,w * 64);
+					,w * 64, h * 64);
 			else if (game->map[h][w] == 'P')
+			{
 				mlx_put_image_to_window(game->mlx,game->win,game->player,
-					h * 64,w * 64);
+					w * 64, h * 64);
+				game->ylocation = h;
+				game->xlocation = w;
+				game->map[h][w] = '0';
+			}
 			//else
 				//ft_printf("illegal map, try again!!");
 			w++;
