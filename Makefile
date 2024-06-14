@@ -12,6 +12,7 @@ SRC = main.c\
 #	  errors.c\
 
 OBJ = $(patsubst %.c,%.o,$(SRC))
+DEP = $(patsubst %.c,%.d,$(SRC))
 LFLAGS =
 
 UNAME := $(shell uname -s)
@@ -46,8 +47,10 @@ mlx:
 	@$(MAKE) -C $(FMLX)
 	@echo "Made mlx"
 
+-include $(DEP)
+
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

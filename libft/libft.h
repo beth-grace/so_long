@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.org.au>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:06:41 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/11 18:34:39 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/14 18:32:13 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
+# include <stdarg.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -54,17 +55,24 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+int		ft_putchar_fd(char c, int fd);
+int		ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+int		ft_putnbr_fd(int n, int fd);
+int		ft_puthex_fd(unsigned long n, char *pls, int fd);
+int		ft_putunbr_fd(unsigned int n, int fd);
+int		ft_putptr_fd(size_t n, int fd);
 
 //GNL
 
 char	*get_next_line(int fd);
-char	*read_nstash(int fd,char *buffy,char *stash);
+char	*read_nstash(int fd, char *buffy, char *stash);
 char	*extract_line(char *newline);
 
+//FT_Printf
+
+int		ft_printf(const char *format, ...);
+int		checkcase(char cases, va_list args);
 // Bonus Stuffz
 
 typedef struct s_list
