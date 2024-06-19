@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 01:24:44 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/14 18:35:49 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/19 19:55:06 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,10 @@ void	player_position(t_so_long *game)
 
 void	old_tile(t_so_long *game)
 {
-	mlx_put_image_to_window(game->mlx, game->win, game->floor,
-		game->xlocation * 64, game->ylocation * 64);
+	if (game->map[game->ylocation][game->xlocation] == 'E')
+		mlx_put_image_to_window(game->mlx, game->win, game->exit,
+			game->xlocation * 64, game->ylocation * 64);
+	else
+		mlx_put_image_to_window(game->mlx, game->win, game->floor,
+			game->xlocation * 64, game->ylocation * 64);
 }

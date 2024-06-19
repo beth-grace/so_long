@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:53:18 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/19 19:46:42 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/19 19:50:26 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	find_path(t_so_long *game)
 		pos_y++;
 	}
 	out = maze(game, new_map, pos_y, pos_x);
-	pos_y = game->height;
+	pos_y = game->height - 1;
 	while (pos_y >= 0)
 		free(new_map[pos_y--]);
 	free(new_map);
