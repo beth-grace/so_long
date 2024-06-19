@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:53:18 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/19 19:34:09 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/19 19:46:42 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	**copy_map(t_so_long *game)
 		new_map[i] = ft_strdup(game->map[i]);
 	return(new_map);
 }
-
 
 int	find_path(t_so_long *game)
 {
@@ -50,6 +49,7 @@ int	find_path(t_so_long *game)
 		pos_y++;
 	}
 	out = maze(game, new_map, pos_y, pos_x);
+	pos_y = game->height;
 	while (pos_y >= 0)
 		free(new_map[pos_y--]);
 	free(new_map);
