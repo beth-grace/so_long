@@ -54,7 +54,7 @@ mlx:
 	$(CC) $(CFLAGS) -MMD -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(DEP)
 	make -C libft fclean
 	make -C minilibx clean
 

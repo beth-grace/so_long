@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/19 19:27:07 by beefie           ###   ########.fr       */
+/*   Updated: 2024/06/19 20:49:42 by bmilford         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_so_long
 	int				xlocation;
 	int				ylocation;
 	int				moves;
+	int				exit_c;
+	int				player_c;
 	char			**map;
 	void			*mlx;
 	void			*win;
@@ -72,5 +74,7 @@ void	old_tile(t_so_long *game);
 char	**copy_map(t_so_long *game);
 int		find_path(t_so_long *game);
 int		maze(t_so_long *game, char **new_map, int pos_y, int pos_x);
+void	moving(t_so_long *game, int pot_y, int pot_x);
+void	map_char_check(t_so_long *game);
 
 #endif
