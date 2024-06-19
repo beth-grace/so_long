@@ -6,6 +6,7 @@ SRC = main.c\
 	  put_images.c\
 	  map_tingz.c\
 	  key_commands.c\
+	  maze_solver.c\
 
 #	  key_commands.c\
 #	  events.c\

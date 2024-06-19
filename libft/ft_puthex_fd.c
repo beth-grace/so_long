@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tf_puthex_fd.c                                     :+:      :+:    :+:   */
+/*   ft_puthex_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 17:24:29 by bmilford          #+#    #+#             */
-/*   Updated: 2024/04/24 15:14:24 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/19 19:19:12 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_puthex_fd(unsigned long n, char *pls, int fd)
 
 	t = 0;
 	base = ft_strlen(pls);
-	if (n < base && n >= 0)
+	if (n < base)
 	{
 		write(fd, pls + n, 1);
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: bmilford <bmilford@student.42adel.o>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 19:02:22 by bmilford          #+#    #+#             */
-/*   Updated: 2024/06/14 18:43:13 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/06/19 19:27:07 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,5 +69,8 @@ int		keycheck(int key_code, t_so_long *game);
 void	player_position(t_so_long *game);
 int		game_closed(t_so_long *game);
 void	old_tile(t_so_long *game);
+char	**copy_map(t_so_long *game);
+int		find_path(t_so_long *game);
+int		maze(t_so_long *game, char **new_map, int pos_y, int pos_x);
 
 #endif
