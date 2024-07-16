@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 20:53:18 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/19 20:05:02 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:03:16 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	maze(t_so_long *game, char **new_map, int pos_y, int pos_x)
 {
 	if (pos_y < 0 || pos_x < 0)
 		return (0);
-	if (pos_y > game->height || pos_x > game->width)
+	if (pos_y > game->height -1 || pos_x > game->width -1)
 		return (0);
 	if (new_map[pos_y][pos_x] == '1')
 		return (0);

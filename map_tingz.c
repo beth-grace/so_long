@@ -6,7 +6,7 @@
 /*   By: beefie <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:54:56 by beefie            #+#    #+#             */
-/*   Updated: 2024/06/19 20:53:20 by bmilford         ###   ########.fr       */
+/*   Updated: 2024/07/16 18:13:20 by beefie           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int	map_wall_check(t_so_long *game)
 		pos_x = 0;
 		while (pos_x < game->height)
 		{
-			if ((pos_y == 0 || pos_y == game->height - 1)
-				&& (pos_x == 0 || pos_x == game->width - 1)
+			if ((pos_y == 0 || pos_y == game->height - 1
+				 ||pos_x == 0 || pos_x == game->width - 1)
 				&& game->map[pos_y][pos_x] != '1')
 				return (1);
 			pos_x++;

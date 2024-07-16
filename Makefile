@@ -18,7 +18,7 @@ LFLAGS =
 
 UNAME := $(shell uname -s)
 ifeq ($(UNAME),Darwin)
-	CFLAGS += -DMAC_OS -fsanitize=leak
+	CFLAGS += -DMAC_OS
 	FMLX = minilibx
 	LFLAGS += -framework OpenGL -framework AppKit
 endif
