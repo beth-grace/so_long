@@ -63,6 +63,6 @@ int	main(int argc, char *argv[])
 	}
 	map_gen(&game);
 	mlx_key_hook(game.win, keycheck, &game);
-	mlx_hook(game.win, 17, 1L << 5, &game_closed, NULL);
+	mlx_hook(game.win, 17, 1L << 5, &game_closed, &game);
 	mlx_loop(game.mlx);
 }
